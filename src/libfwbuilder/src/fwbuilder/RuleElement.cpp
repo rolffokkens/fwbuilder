@@ -77,7 +77,7 @@ void RuleElement::init(FWObjectDatabase *root)
     }
 }
 
-void RuleElement::fromXML(xmlNodePtr root) throw(FWException)
+void RuleElement::fromXML(xmlNodePtr root)
 {
     const char *n;
 
@@ -91,7 +91,7 @@ void RuleElement::fromXML(xmlNodePtr root) throw(FWException)
     FWObject::fromXML(root);
 }
 
-xmlNodePtr RuleElement::toXML(xmlNodePtr xml_parent_node) throw(FWException)
+xmlNodePtr RuleElement::toXML(xmlNodePtr xml_parent_node)
 {
     int my_id = getId();
     setId(-1);
@@ -105,7 +105,7 @@ xmlNodePtr RuleElement::toXML(xmlNodePtr xml_parent_node) throw(FWException)
 }
 
 FWObject& RuleElement::shallowDuplicate(const FWObject *other,
-                                        bool preserve_id) throw(FWException)
+                                        bool preserve_id)
 {
     setNeg(RuleElement::constcast(other)->getNeg());
     return FWObject::shallowDuplicate(other, preserve_id);
@@ -170,7 +170,7 @@ int RuleElementSrc::getAnyElementId() const
     return FWObjectDatabase::ANY_ADDRESS_ID;
 }
 
-xmlNodePtr RuleElementSrc::toXML(xmlNodePtr parent) throw(FWException)
+xmlNodePtr RuleElementSrc::toXML(xmlNodePtr parent)
 {
     xmlNodePtr me = RuleElement::toXML(parent);
 
@@ -197,7 +197,7 @@ int RuleElementDst::getAnyElementId() const
     return FWObjectDatabase::ANY_ADDRESS_ID;
 }
 
-xmlNodePtr RuleElementDst::toXML(xmlNodePtr parent) throw(FWException)
+xmlNodePtr RuleElementDst::toXML(xmlNodePtr parent)
 {
     xmlNodePtr me = RuleElement::toXML(parent);
 
@@ -224,7 +224,7 @@ int RuleElementSrv::getAnyElementId() const
     return FWObjectDatabase::ANY_SERVICE_ID;
 }
 
-xmlNodePtr RuleElementSrv::toXML(xmlNodePtr parent) throw(FWException)
+xmlNodePtr RuleElementSrv::toXML(xmlNodePtr parent)
 {
     xmlNodePtr me = RuleElement::toXML(parent);
 
@@ -250,7 +250,7 @@ int RuleElementItf::getAnyElementId() const
     return FWObjectDatabase::ANY_ADDRESS_ID;
 }
 
-xmlNodePtr RuleElementItf::toXML(xmlNodePtr parent) throw(FWException)
+xmlNodePtr RuleElementItf::toXML(xmlNodePtr parent)
 {
     xmlNodePtr me = RuleElement::toXML(parent);
 
@@ -345,7 +345,7 @@ int RuleElementOSrc::getAnyElementId() const
 }
 
 
-xmlNodePtr RuleElementOSrc::toXML(xmlNodePtr parent) throw(FWException)
+xmlNodePtr RuleElementOSrc::toXML(xmlNodePtr parent)
 {
     xmlNodePtr me = RuleElement::toXML(parent);
 
@@ -372,7 +372,7 @@ int RuleElementODst::getAnyElementId() const
 }
 
 
-xmlNodePtr RuleElementODst::toXML(xmlNodePtr parent) throw(FWException)
+xmlNodePtr RuleElementODst::toXML(xmlNodePtr parent)
 {
     xmlNodePtr me = RuleElement::toXML(parent);
 
@@ -399,7 +399,7 @@ int RuleElementOSrv::getAnyElementId() const
 }
 
 
-xmlNodePtr RuleElementOSrv::toXML(xmlNodePtr parent) throw(FWException)
+xmlNodePtr RuleElementOSrv::toXML(xmlNodePtr parent)
 {
     xmlNodePtr me = RuleElement::toXML(parent);
 
@@ -428,7 +428,7 @@ int RuleElementTSrc::getAnyElementId() const
 }
 
 
-xmlNodePtr RuleElementTSrc::toXML(xmlNodePtr parent) throw(FWException)
+xmlNodePtr RuleElementTSrc::toXML(xmlNodePtr parent)
 {
     xmlNodePtr me = RuleElement::toXML(parent);
 
@@ -455,7 +455,7 @@ int RuleElementTDst::getAnyElementId() const
 }
 
 
-xmlNodePtr RuleElementTDst::toXML(xmlNodePtr parent) throw(FWException)
+xmlNodePtr RuleElementTDst::toXML(xmlNodePtr parent)
 {
     xmlNodePtr me = RuleElement::toXML(parent);
 
@@ -482,7 +482,7 @@ int RuleElementTSrv::getAnyElementId() const
 }
 
 
-xmlNodePtr RuleElementTSrv::toXML(xmlNodePtr parent) throw(FWException)
+xmlNodePtr RuleElementTSrv::toXML(xmlNodePtr parent)
 {
     xmlNodePtr me = RuleElement::toXML(parent);
 
@@ -523,7 +523,7 @@ int RuleElementInterval::getAnyElementId() const
 }
 
 
-xmlNodePtr RuleElementInterval::toXML(xmlNodePtr parent) throw(FWException)
+xmlNodePtr RuleElementInterval::toXML(xmlNodePtr parent)
 {
     xmlNodePtr me = RuleElement::toXML(parent);
 
@@ -550,7 +550,7 @@ int RuleElementRDst::getAnyElementId() const
     return FWObjectDatabase::ANY_ADDRESS_ID;
 }
 
-xmlNodePtr RuleElementRDst::toXML(xmlNodePtr parent) throw(FWException)
+xmlNodePtr RuleElementRDst::toXML(xmlNodePtr parent)
 {
     xmlNodePtr me = RuleElement::toXML(parent);
 
@@ -576,7 +576,7 @@ int RuleElementRGtw::getAnyElementId() const
     return FWObjectDatabase::ANY_ADDRESS_ID;
 }
 
-xmlNodePtr RuleElementRGtw::toXML(xmlNodePtr parent) throw(FWException)
+xmlNodePtr RuleElementRGtw::toXML(xmlNodePtr parent)
 {
     xmlNodePtr me = RuleElement::toXML(parent);
 

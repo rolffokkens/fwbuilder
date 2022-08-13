@@ -63,8 +63,7 @@ Inet6AddrMask::Inet6AddrMask() : InetAddrMask()
     setNetworkAndBroadcastAddress();
 }
 
-Inet6AddrMask::Inet6AddrMask(const string &s) throw(FWException) :
-    InetAddrMask(true)
+Inet6AddrMask::Inet6AddrMask(const string &s) : InetAddrMask(true)
 {
     struct in6_addr a_ipv6;
     int nbits;

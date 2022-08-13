@@ -44,16 +44,16 @@ class DialogFactory {
     static BaseObjectDialog *createDialog(QWidget *parent,const QString &objType);
 
     static QWidget *createFWDialog(QWidget *parent,libfwbuilder::FWObject *o)
-        throw(libfwbuilder::FWException);
+        ;
     static QWidget *createOSDialog(QWidget *parent,libfwbuilder::FWObject *o)
-        throw(libfwbuilder::FWException);
+        ;
     static QWidget *createIfaceDialog(QWidget *parent,libfwbuilder::FWObject *o)
-        throw(libfwbuilder::FWException);
+        ;
     static QWidget *createClusterConfDialog(QWidget *parent, libfwbuilder::FWObject *o)
-        throw(libfwbuilder::FWException);
+        ;
     static QString getClusterGroupOptionsDialogName(libfwbuilder::FWObject *o);
     static QWidget *createClusterGroupOptionsDialog(QWidget *parent, libfwbuilder::FWObject *o)
-        throw(libfwbuilder::FWException);
+        ;
 
     static std::string getActionDialogPageName(libfwbuilder::Firewall *fw,
                                                libfwbuilder::Rule *rule);

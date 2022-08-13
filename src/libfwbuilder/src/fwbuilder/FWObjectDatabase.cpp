@@ -306,7 +306,7 @@ const string FWObjectDatabase::getFileDir()
 
 void FWObjectDatabase::load(const string &f,
                             XMLTools::UpgradePredicate *upgrade,
-                            const std::string &template_dir) throw(FWException)
+                            const std::string &template_dir)
 {
     if(f=="") return;
 
@@ -345,7 +345,7 @@ void FWObjectDatabase::load(const string &f,
     busy = false;
 }
 
-void FWObjectDatabase::saveFile(const string &filename) throw(FWException)
+void FWObjectDatabase::saveFile(const string &filename)
 {
 /* need to set flag 'busy' so we ignore read-only status. Some objects
  * modify themselves in toXML() (e.g. Management) so if they belong to
@@ -373,7 +373,6 @@ void FWObjectDatabase::saveFile(const string &filename) throw(FWException)
 }
 
 void FWObjectDatabase::saveToBuffer(xmlChar **buffer, int *size)
-    throw(FWException)
 {
 /* need to set flag 'busy' so we ignore read-only status. Some objects
  * modify themselves in toXML() (e.g. Management) so if they belong to a
@@ -401,7 +400,7 @@ void FWObjectDatabase::saveToBuffer(xmlChar **buffer, int *size)
     busy = false;
 }
 
-void FWObjectDatabase::fromXML(xmlNodePtr root) throw(FWException)
+void FWObjectDatabase::fromXML(xmlNodePtr root)
 {
     FWObject::fromXML(root);
     
@@ -417,7 +416,7 @@ void FWObjectDatabase::fromXML(xmlNodePtr root) throw(FWException)
     }
 }
 
-xmlNodePtr FWObjectDatabase::toXML(xmlNodePtr parent) throw(FWException)
+xmlNodePtr FWObjectDatabase::toXML(xmlNodePtr parent)
 {
     FWObject *o;
 

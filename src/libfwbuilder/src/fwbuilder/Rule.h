@@ -109,9 +109,9 @@ class Rule : public Group
 
     virtual FWObject& shallowDuplicate(const FWObject *obj,
                                        bool preserve_id = true)
-        throw(FWException);
+        ;
 
-    virtual bool cmp(const FWObject *obj, bool recursive=false) throw(FWException);
+    virtual bool cmp(const FWObject *obj, bool recursive=false) ;
     
     virtual FWOptions* getOptionsObject() const;
 
@@ -204,12 +204,12 @@ public:
      */
     virtual void init(FWObjectDatabase *root);
 
-    virtual void fromXML(xmlNodePtr parent) throw(FWException);
-    virtual xmlNodePtr toXML      (xmlNodePtr parent) throw(FWException);
+    virtual void fromXML(xmlNodePtr parent) ;
+    virtual xmlNodePtr toXML      (xmlNodePtr parent) ;
     virtual FWObject& shallowDuplicate(const FWObject *obj,
                                        bool preserve_id = true)
-        throw(FWException);
-    virtual bool cmp(const FWObject *obj, bool recursive=false) throw(FWException);
+        ;
+    virtual bool cmp(const FWObject *obj, bool recursive=false) ;
 
     DECLARE_FWOBJECT_SUBTYPE(PolicyRule);
 
@@ -363,8 +363,8 @@ public:
      */
     virtual void init(FWObjectDatabase *root);
     
-    virtual void fromXML(xmlNodePtr parent) throw(FWException);
-    virtual xmlNodePtr toXML      (xmlNodePtr parent) throw(FWException);
+    virtual void fromXML(xmlNodePtr parent) ;
+    virtual xmlNodePtr toXML      (xmlNodePtr parent) ;
 
     DECLARE_FWOBJECT_SUBTYPE(NATRule);
 
@@ -411,8 +411,8 @@ public:
     void setRuleType(NATRuleTypes rt);
 
     virtual FWObject& shallowDuplicate(const FWObject *obj, bool preserve_id = true)
-        throw(FWException);
-    virtual bool cmp(const FWObject *obj, bool recursive=false) throw(FWException);
+        ;
+    virtual bool cmp(const FWObject *obj, bool recursive=false) ;
 };
 
 class RoutingRule : public Rule 
@@ -439,8 +439,8 @@ class RoutingRule : public Rule
      */
     virtual void init(FWObjectDatabase *root);
     
-    virtual void fromXML(xmlNodePtr parent) throw(FWException);
-    virtual xmlNodePtr toXML(xmlNodePtr parent) throw(FWException);
+    virtual void fromXML(xmlNodePtr parent) ;
+    virtual xmlNodePtr toXML(xmlNodePtr parent) ;
 
     DECLARE_FWOBJECT_SUBTYPE(RoutingRule);
 
@@ -467,7 +467,7 @@ class RoutingRule : public Rule
     std::string getSortedDstIds() const;
 
     virtual FWObject& duplicate(const FWObject *obj, bool preserve_id = true)
-        throw(FWException);
+        ;
 };
 
 }

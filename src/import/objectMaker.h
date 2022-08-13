@@ -68,9 +68,9 @@ class ObjectMakerException : public std::exception
 public:
     ObjectMakerException(const std::string &e) { err = e.c_str(); }
     ObjectMakerException(const QString &e) { err = e; }
-    virtual ~ObjectMakerException() throw() {}
+    virtual ~ObjectMakerException()  {}
     QString toString() { return err; }
-    virtual const char* what() const throw() { return err.toStdString().c_str(); }
+    virtual const char* what() const noexcept { return err.toStdString().c_str(); }
 };
 
 

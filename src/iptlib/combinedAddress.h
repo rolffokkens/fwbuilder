@@ -49,7 +49,7 @@ class combinedAddress : public IPv4
 
     virtual FWObject& shallowDuplicate(const FWObject *obj,
                                        bool preserve_id = true)
-        throw(FWException);
+        ;
     
     std::string getPhysAddress() const;
     void setPhysAddress(const std::string &s);

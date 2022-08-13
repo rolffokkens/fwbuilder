@@ -159,13 +159,13 @@ class TimeoutCounter
     /**
      * Throw exception if timeout is expired
      */
-    void check() const throw(FWException) ;
+    void check() const  ;
 
     /**
      * Reads from socket/file.
      * Throws FWException if timeout occured.
      */
-    ssize_t read(int fd, void *buf, size_t n) const throw(FWException);
+    ssize_t read(int fd, void *buf, size_t n) const ;
     
 };
 #endif

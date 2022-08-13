@@ -46,7 +46,7 @@ const char *PIXObjectGroup::TYPENAME={"PIXObjectGroup"};
 
 QString PIXObjectGroup::groupMemberToString(FWObject *obj,
                                            NamedObjectsManager*)
-    throw(libfwbuilder::FWException)
+
 {
     ostringstream ostr;
 

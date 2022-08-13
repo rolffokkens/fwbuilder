@@ -216,7 +216,7 @@ BaseObjectDialog *DialogFactory::createDialog(QWidget *parent, const QString &ob
 
 
 QWidget *DialogFactory::createFWDialog(QWidget *parent, FWObject *o)
-    throw(FWException)
+
 {
     string platform = o->getStr("platform");
     string host_os = o->getStr("host_OS");
@@ -260,7 +260,7 @@ QWidget *DialogFactory::createFWDialog(QWidget *parent, FWObject *o)
 
 
 QWidget *DialogFactory::createOSDialog(QWidget *parent,FWObject *o)
-    throw(FWException)
+
 {
     string host_os = o->getStr("host_OS");
 
@@ -292,7 +292,7 @@ QWidget *DialogFactory::createOSDialog(QWidget *parent,FWObject *o)
 }
 
 QWidget *DialogFactory::createIfaceDialog(QWidget *parent,FWObject *o)
-    throw(FWException)
+
 {
     FWObject *h = Host::getParentHost(o);
     //FWObject *h = Interface::cast(o)->getParentHost();
@@ -322,7 +322,7 @@ QWidget *DialogFactory::createIfaceDialog(QWidget *parent,FWObject *o)
 }
 
 QWidget *DialogFactory::createClusterConfDialog(QWidget *parent, FWObject *o)
-    throw(FWException)
+
 {
     FWObject *objparent = o->getParent();
     while (objparent && objparent->getTypeName()!="Cluster")
@@ -368,7 +368,7 @@ QString DialogFactory::getClusterGroupOptionsDialogName(FWObject *o)
 }
 
 QWidget *DialogFactory::createClusterGroupOptionsDialog(
-    QWidget *parent, FWObject *o) throw(libfwbuilder::FWException)
+    QWidget *parent, FWObject *o)
 {
     QString dlgname = getClusterGroupOptionsDialogName(o);
 

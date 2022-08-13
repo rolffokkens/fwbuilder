@@ -75,7 +75,7 @@ public:
 
         virtual FWObject& shallowDuplicate(const FWObject *obj,
                                            bool preserve_id = true)
-            throw(libfwbuilder::FWException);
+            ;
         
         void setObjectGroupType(object_group_type _gt) { gt=_gt; }
         object_group_type getObjectGroupType() { return gt; }
@@ -95,10 +95,10 @@ public:
 
         virtual QString groupMemberToString(
             libfwbuilder::FWObject *obj, NamedObjectsManager *named_obj_manager)
-            throw(libfwbuilder::FWException);
+            ;
 
         virtual QString toString(NamedObjectsManager *named_obj_manager)
-            throw(libfwbuilder::FWException);
+            ;
     };
 
 }

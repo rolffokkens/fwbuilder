@@ -85,9 +85,9 @@ class ImporterException : public std::exception
 public:
     ImporterException(const std::string &e) { err = e.c_str(); }
     ImporterException(const QString &e) { err = e; }
-    virtual ~ImporterException() throw() {}
+    virtual ~ImporterException()  {}
     QString toString() { return err; }
-    virtual const char* what() const throw() { return err.toStdString().c_str(); }
+    virtual const char* what() const noexcept { return err.toStdString().c_str(); }
 };
 
 class Importer

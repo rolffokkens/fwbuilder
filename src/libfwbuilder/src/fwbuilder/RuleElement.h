@@ -61,12 +61,12 @@ public:
 
     DECLARE_DISPATCH_METHODS(RuleElement);
     
-    virtual void fromXML(xmlNodePtr parent) throw(FWException);
-    virtual xmlNodePtr toXML(xmlNodePtr xml_parent_node) throw(FWException);
+    virtual void fromXML(xmlNodePtr parent) ;
+    virtual xmlNodePtr toXML(xmlNodePtr xml_parent_node) ;
 
     virtual FWObject& shallowDuplicate(const FWObject *obj,
                                        bool preserve_id = true)
-        throw(FWException);
+        ;
     
     void setAnyElement();
     void reset();
@@ -101,7 +101,7 @@ class RuleElementSrc : public ObjectGroup, public RuleElement {
 
     virtual int getAnyElementId() const;
     virtual bool validateChild(FWObject *o);
-    virtual xmlNodePtr toXML(xmlNodePtr parent) throw(FWException);
+    virtual xmlNodePtr toXML(xmlNodePtr parent) ;
     virtual bool isPrimaryObject() const { return false; }
 };
 
@@ -113,7 +113,7 @@ class RuleElementDst : public ObjectGroup, public RuleElement {
 
     virtual int getAnyElementId() const;
     virtual bool validateChild(FWObject *o);
-    virtual xmlNodePtr toXML(xmlNodePtr parent) throw(FWException);
+    virtual xmlNodePtr toXML(xmlNodePtr parent) ;
     virtual bool isPrimaryObject() const { return false; }
 };
 
@@ -125,7 +125,7 @@ class RuleElementSrv : public ServiceGroup, public RuleElement {
 
     virtual int getAnyElementId() const;
     virtual bool validateChild(FWObject *o);
-    virtual xmlNodePtr toXML(xmlNodePtr parent) throw(FWException);
+    virtual xmlNodePtr toXML(xmlNodePtr parent) ;
     virtual bool isPrimaryObject() const { return false; }
 };
 
@@ -138,7 +138,7 @@ class RuleElementItf : public ObjectGroup, public RuleElement {
     virtual int getAnyElementId() const;
     virtual bool validateChild(FWObject *o);
     bool checkItfChildOfThisFw(FWObject *o);
-    virtual xmlNodePtr toXML(xmlNodePtr parent) throw(FWException);
+    virtual xmlNodePtr toXML(xmlNodePtr parent) ;
     virtual bool isPrimaryObject() const { return false; }
 };
 
@@ -167,7 +167,7 @@ class RuleElementInterval : public IntervalGroup, public RuleElement {
 
     virtual int getAnyElementId() const;
     virtual bool validateChild(FWObject *o);
-    virtual xmlNodePtr toXML(xmlNodePtr parent) throw(FWException);
+    virtual xmlNodePtr toXML(xmlNodePtr parent) ;
     virtual bool isPrimaryObject() const { return false; }
 };
 
@@ -179,7 +179,7 @@ class RuleElementOSrc : public ObjectGroup, public RuleElement {
 
     virtual int getAnyElementId() const;
     virtual bool validateChild(FWObject *o);
-    virtual xmlNodePtr toXML(xmlNodePtr parent) throw(FWException);
+    virtual xmlNodePtr toXML(xmlNodePtr parent) ;
     virtual bool isPrimaryObject() const { return false; }
 };
 
@@ -191,7 +191,7 @@ class RuleElementODst : public ObjectGroup, public RuleElement {
 
     virtual int getAnyElementId() const;
     virtual bool validateChild(FWObject *o);
-    virtual xmlNodePtr toXML(xmlNodePtr parent) throw(FWException);
+    virtual xmlNodePtr toXML(xmlNodePtr parent) ;
     virtual bool isPrimaryObject() const { return false; }
 };
 
@@ -203,7 +203,7 @@ class RuleElementOSrv : public ServiceGroup, public RuleElement {
 
     virtual int getAnyElementId() const;
     virtual bool validateChild(FWObject *o);
-    virtual xmlNodePtr toXML(xmlNodePtr parent) throw(FWException);
+    virtual xmlNodePtr toXML(xmlNodePtr parent) ;
     virtual bool isPrimaryObject() const { return false; }
 };
 
@@ -215,7 +215,7 @@ class RuleElementTSrc : public ObjectGroup, public RuleElement {
 
     virtual int getAnyElementId() const;
     virtual bool validateChild(FWObject *o);
-    virtual xmlNodePtr toXML(xmlNodePtr parent) throw(FWException);
+    virtual xmlNodePtr toXML(xmlNodePtr parent) ;
     virtual bool isPrimaryObject() const { return false; }
 };
 
@@ -227,7 +227,7 @@ class RuleElementTDst : public ObjectGroup, public RuleElement {
 
     virtual int getAnyElementId() const;
     virtual bool validateChild(FWObject *o);
-    virtual xmlNodePtr toXML(xmlNodePtr parent) throw(FWException);
+    virtual xmlNodePtr toXML(xmlNodePtr parent) ;
     virtual bool isPrimaryObject() const { return false; }
 };
 
@@ -239,7 +239,7 @@ class RuleElementTSrv : public ServiceGroup, public RuleElement {
 
     virtual int getAnyElementId() const;
     virtual bool validateChild(FWObject *o);
-    virtual xmlNodePtr toXML(xmlNodePtr parent) throw(FWException);
+    virtual xmlNodePtr toXML(xmlNodePtr parent) ;
     virtual bool isPrimaryObject() const { return false; }
 };
 
@@ -251,7 +251,7 @@ class RuleElementRDst : public ObjectGroup, public RuleElement {
 
     virtual int getAnyElementId() const;
     virtual bool validateChild(FWObject *o);
-    virtual xmlNodePtr toXML(xmlNodePtr parent) throw(FWException);
+    virtual xmlNodePtr toXML(xmlNodePtr parent) ;
     virtual bool isPrimaryObject() const { return false; }
 };
 
@@ -265,7 +265,7 @@ class RuleElementRGtw : public ObjectGroup, public RuleElement {
     virtual bool validateChild(FWObject *o);
     bool checkSingleIPAdress(FWObject *o);
     bool checkReachableIPAdress(FWObject *o);
-    virtual xmlNodePtr toXML(xmlNodePtr parent) throw(FWException);
+    virtual xmlNodePtr toXML(xmlNodePtr parent) ;
     virtual bool isPrimaryObject() const { return false; }
 };
 

@@ -60,7 +60,7 @@ namespace fwcompiler {
          */
         int findInterfaceByNetzone(const libfwbuilder::InetAddr *a,
                                    const libfwbuilder::InetAddr *nm=NULL)
-            throw(libfwbuilder::FWException);
+            ;
         int findInterfaceByNetzone(libfwbuilder::Address *obj);
         std::list<int> findInterfaceByNetzoneOrAll(
             libfwbuilder::RuleElement *re);

@@ -80,7 +80,7 @@ void TableFactory::detach()
     // dbroot->remove(persistent_tables, false);
 }
 
-struct joinIDs : public unary_function<string, void>
+struct joinIDs
 {
     string    out, sep;
     joinIDs(const string& _sep) { sep=_sep; };
@@ -103,7 +103,7 @@ string TableFactory::generateTblID(RuleElement *re)
 }
 
 void TableFactory::registerTable(const string& tblname, const string& tblid,
-                                 FWObject* tbl) throw(FWException)
+                                 FWObject* tbl)
 {
 // two different table objects should have different names
 // 

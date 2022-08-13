@@ -1007,9 +1007,9 @@ public:
         /**
          * overloaded methods: uses current firewall and ruleset objects
          */
-        virtual void abort(const std::string &errstr) throw(libfwbuilder::FWException);
+        virtual void abort(const std::string &errstr) ;
         virtual void abort(libfwbuilder::FWObject *rule, const std::string &errstr)
-            throw(libfwbuilder::FWException);
+            ;
 
         virtual void error(const std::string &errstr);
         virtual void error(libfwbuilder::FWObject *rule, const std::string &errstr);

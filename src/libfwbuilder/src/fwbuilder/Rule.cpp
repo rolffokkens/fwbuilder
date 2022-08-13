@@ -80,7 +80,7 @@ void Rule::setRuleGroupName(const std::string &group_name)
 
 
 FWObject& Rule::shallowDuplicate(const FWObject *x,
-                                 bool preserve_id) throw(FWException)
+                                 bool preserve_id)
 {
     const Rule *rx=Rule::constcast(x);
     fallback = rx->fallback;
@@ -92,7 +92,7 @@ FWObject& Rule::shallowDuplicate(const FWObject *x,
     return  FWObject::shallowDuplicate(x,preserve_id);
 }
 
-bool Rule::cmp(const FWObject *x, bool recursive) throw(FWException)
+bool Rule::cmp(const FWObject *x, bool recursive)
 {
     const Rule *rx = Rule::constcast(x);
     if (fallback != rx->fallback ||
@@ -146,7 +146,7 @@ void PolicyRule::init(FWObjectDatabase *root)
 }
 
 FWObject& PolicyRule::shallowDuplicate(const FWObject *x,
-                                       bool preserve_id) throw(FWException)
+                                       bool preserve_id)
 {
     const PolicyRule *rx=PolicyRule::constcast(x);
     setDirection(rx->getDirection());
@@ -162,7 +162,7 @@ FWObject& PolicyRule::shallowDuplicate(const FWObject *x,
     return  Rule::shallowDuplicate(x, preserve_id);
 }
 
-bool PolicyRule::cmp(const FWObject *x, bool recursive) throw(FWException)
+bool PolicyRule::cmp(const FWObject *x, bool recursive)
 {
     const PolicyRule *rx = PolicyRule::constcast(x);
     if (rx == NULL) return false;
@@ -296,7 +296,7 @@ bool   PolicyRule::getLogging() const    { return getBool("log"); }
 void   PolicyRule::setLogging(bool flag) { setBool("log",flag);   }
 
 
-void PolicyRule::fromXML(xmlNodePtr root) throw(FWException)
+void PolicyRule::fromXML(xmlNodePtr root)
 {
     const char* n;
 
@@ -354,7 +354,7 @@ void PolicyRule::fromXML(xmlNodePtr root) throw(FWException)
 
 }
 
-xmlNodePtr PolicyRule::toXML(xmlNodePtr parent) throw(FWException)
+xmlNodePtr PolicyRule::toXML(xmlNodePtr parent)
 {
     xmlNodePtr me = FWObject::toXML(parent, false);
     xmlNewProp(me, TOXMLCAST("action"), STRTOXMLCAST(getActionAsString()));
@@ -765,7 +765,7 @@ bool NATRule::isEmpty()
             itf_inb->isAny() && itf_outb->isAny());
 }
 
-void NATRule::fromXML(xmlNodePtr root) throw(FWException)
+void NATRule::fromXML(xmlNodePtr root)
 {
     const char* n;
 
@@ -801,7 +801,7 @@ void NATRule::fromXML(xmlNodePtr root) throw(FWException)
 
 }
 
-xmlNodePtr NATRule::toXML(xmlNodePtr parent) throw(FWException)
+xmlNodePtr NATRule::toXML(xmlNodePtr parent)
 {
     xmlNodePtr me = FWObject::toXML(parent, false);
 //    xmlNewProp(me, TOXMLCAST("name"), STRTOXMLCAST(getName()));
@@ -910,7 +910,7 @@ void NATRule::setRuleType(NATRuleTypes rt)
 }
 
 FWObject& NATRule::shallowDuplicate(const FWObject *x,
-                                    bool preserve_id) throw(FWException)
+                                    bool preserve_id)
 {
     const NATRule *rx = NATRule::constcast(x);
     if (rx!=NULL) rule_type = rx->rule_type;
@@ -929,7 +929,7 @@ FWObject& NATRule::shallowDuplicate(const FWObject *x,
     return  Rule::shallowDuplicate(x, preserve_id);
 }
 
-bool NATRule::cmp(const FWObject *x, bool recursive) throw(FWException)
+bool NATRule::cmp(const FWObject *x, bool recursive)
 {
     const NATRule *rx = NATRule::constcast(x);
     if (rx == NULL) return false;
@@ -1007,7 +1007,7 @@ void RoutingRule::setMetric(string metric) {
     setInt("metric", imetric);
 }
 
-void RoutingRule::fromXML(xmlNodePtr root) throw(FWException)
+void RoutingRule::fromXML(xmlNodePtr root)
 {
     const char* n;
 
@@ -1043,7 +1043,7 @@ void RoutingRule::fromXML(xmlNodePtr root) throw(FWException)
 
 }
 
-xmlNodePtr RoutingRule::toXML(xmlNodePtr parent) throw(FWException)
+xmlNodePtr RoutingRule::toXML(xmlNodePtr parent)
 {
     xmlNodePtr me = FWObject::toXML(parent, false);
 //    xmlNewProp(me, TOXMLCAST("name"), STRTOXMLCAST(getName()));
@@ -1115,7 +1115,7 @@ void RoutingRule::setRuleType(RoutingRuleTypes rt)
 }
 
 FWObject& RoutingRule::duplicate(const FWObject *x,
-                                 bool preserve_id) throw(FWException)
+                                 bool preserve_id)
 {
     Rule::duplicate(x,preserve_id);
     const RoutingRule *rx = RoutingRule::constcast(x);

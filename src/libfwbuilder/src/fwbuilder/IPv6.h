@@ -44,8 +44,8 @@ public:
     IPv6();
     virtual ~IPv6();
 
-    virtual void fromXML(xmlNodePtr parent) throw(FWException);
-    virtual xmlNodePtr toXML(xmlNodePtr xml_parent_node) throw(FWException);
+    virtual void fromXML(xmlNodePtr parent) ;
+    virtual xmlNodePtr toXML(xmlNodePtr xml_parent_node) ;
 
     virtual unsigned int dimension()  const { return 1; }
     
@@ -55,7 +55,7 @@ public:
     
     virtual FWObject& shallowDuplicate(const FWObject *obj,
                                        bool preserve_id = true)
-        throw(FWException);
+        ;
 
     virtual bool hasInetAddress() const { return true; }
 
